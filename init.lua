@@ -28,5 +28,4 @@ require('lualine').setup {
   extensions = {}
 }
 
-
 vim.opt.termguicolors = true

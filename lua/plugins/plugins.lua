@@ -66,7 +66,10 @@ local plugins = {
   { 
     'ojroques/nvim-bufdel',
     config = function()
-      vim.api.nvim_set_keymap('n', '<leader>x', ':BufDel<CR>', { noremap = true, silent = true })
+      require("bufdel").setup({
+        quit = false,
+        vim.api.nvim_set_keymap('n', '<leader>x', ':BufDel<CR>', { noremap = true, silent = true })
+      })
     end,
   },
 

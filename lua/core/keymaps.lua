@@ -28,10 +28,6 @@ vim.g.mapleader = " "
 vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true })
 
--- Close buffer
-
-vim.api.nvim_set_keymap('n', '<Leader>x', ':bd<CR>', {noremap = true, silent = true})
-
 -- Escape from terminal mode
 
 vim.api.nvim_set_keymap('t', '<S-Tab>', '<C-\\><C-n>', { noremap = true, silent = true })

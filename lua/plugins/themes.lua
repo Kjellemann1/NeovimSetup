@@ -19,10 +19,30 @@ nightfly = {
   end,
 }
 
+-- Monet
+
+monet = {
+  "fynnfluegge/monet.nvim",
+  priority = 1000,
+  config = function()
+    vim.cmd([[colorscheme monet]])
+  end,
+}
+
+-- Dracula
+
+dracula = {
+  "Mofiqul/dracula.nvim",
+  priority = 1000,
+  config = function()
+    vim.cmd([[colorscheme dracula]])
+  end,
+}
+
 -- Transparent
 
 transparent = {
   "xiyaowong/transparent.nvim"
 }
 
-return { catpuccin, transparent }
+return { dracula, transparent }
