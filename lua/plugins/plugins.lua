@@ -10,7 +10,7 @@ plugins = {
     lazy = false,
     "windwp/nvim-autopairs",
     config = function() 
-      require("nvim-autopairs").setup{}
+      require("nvim-autopairs").setup({})
     end,
   },
 
@@ -44,11 +44,17 @@ plugins = {
     lazy = false,
     "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = {"nvim-tree/nvim-web-devicons"}
+    dependencies = {"nvim-tree/nvim-web-devicons"},
+    config = function()
+      require("bufferline").setup({})
+    end,
   },
 
   { -- Scope
     "tiagovla/scope.nvim",
+    config = function()
+      require("scope").setup({})
+    end,
   },
 
   { -- BufDel
@@ -63,7 +69,11 @@ plugins = {
 
   { -- Lualine
     'nvim-lualine/lualine.nvim',
-    requires = {'nvim-tree/nvim-web-devicons', opt = true}
+    requires = {'nvim-tree/nvim-web-devicons', opt = true},
+    config = function()
+      local opts = require("plugins.configs.lualine")
+      require("lualine").setup(opts)
+    end,
   },
 
 }
