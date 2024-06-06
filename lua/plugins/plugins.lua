@@ -1,5 +1,4 @@
 
-
 plugins = {
 
   { -- Copilot
@@ -34,19 +33,6 @@ plugins = {
     dependencies = {"nvim-lua/plenary.nvim"},
   },
 
-  -- {
-  --   -- Snap
-  --   lazy = false,
-  --   "camspiers/snap",
-  --   keys = function() 
-  --     local snap = require("snap")
-  --     return {
-  --       { "<leader>ff", snap.config.file({ producer = "ripgrep.file" }) },
-  --       { "<leader>fw", snap.config.vimgrep({}) },
-  --     }
-  --   end,
-  -- },
-
   { -- Comment
     lazy = false,
    "numToStr/Comment.nvim",
@@ -61,11 +47,11 @@ plugins = {
     dependencies = {"nvim-tree/nvim-web-devicons"}
   },
 
-  {
+  { -- Scope
     "tiagovla/scope.nvim",
   },
 
-  { 
+  { -- BufDel
     'ojroques/nvim-bufdel',
     config = function()
       require("bufdel").setup({
@@ -75,7 +61,7 @@ plugins = {
     end,
   },
 
-  {
+  { -- Lualine
     'nvim-lualine/lualine.nvim',
     requires = {'nvim-tree/nvim-web-devicons', opt = true}
   },

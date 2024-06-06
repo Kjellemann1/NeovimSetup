@@ -1,6 +1,6 @@
 
-require("core.keymaps")
-require("core.options")
+require(".core.qol")
+require(".core.maps")
 require(".lazy")
 require("scope").setup({})
 require("bufferline").setup({})
