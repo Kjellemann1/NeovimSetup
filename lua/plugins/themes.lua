@@ -9,26 +9,6 @@ catpuccin = {
   end,
 }
 
--- Nightfly
-
-nightfly = {
-  "bluz71/vim-nightfly-guicolors",
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme nightfly]])
-  end,
-}
-
--- Monet
-
-monet = {
-  "fynnfluegge/monet.nvim",
-  priority = 1000,
-  config = function()
-    vim.cmd([[colorscheme monet]])
-  end,
-}
-
 -- Dracula
 
 dracula = {
@@ -39,10 +19,33 @@ dracula = {
   end,
 }
 
+-- Cobalt2
+
+cobalt2 = {
+  "lalitmee/cobalt2.nvim",
+  priority = 1000,
+  dependencies = { "tjdevries/colorbuddy.nvim", tag = "v1.0.0" },
+  init = function()
+    require("colorbuddy").colorscheme("cobalt2")
+  end,
+}
+
+-- Bluloco
+
+bluloco ={
+  'uloco/bluloco.nvim',
+  lazy = false,
+  priority = 1000,
+  dependencies = { 'rktjmp/lush.nvim' },
+  config = function()
+    -- your optional config goes here, see below.
+  end,
+}
+
 -- Transparent
 
 transparent = {
   "xiyaowong/transparent.nvim"
 }
 
-return { dracula, transparent }
+return { bluloco, transparent }

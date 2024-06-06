@@ -1,10 +1,10 @@
 
-require(".core.init")
-require(".core.keymaps")
-require(".core.options")
+require("core.keymaps")
+require("core.options")
 require(".lazy")
 require("scope").setup({})
 require("bufferline").setup({})
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -29,3 +29,5 @@ require('lualine').setup {
 }
 
 vim.opt.termguicolors = true
+
+print("test")

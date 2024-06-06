@@ -1,5 +1,6 @@
 
-local plugins = {
+
+plugins = {
 
   { -- Copilot
     lazy = false,
@@ -21,7 +22,8 @@ local plugins = {
       "nvim-tree/nvim-web-devicons"
     },
     config = function()
-      local nvimtree = require("nvim-tree").setup{}
+      local opts = require("plugins.configs.nvimtree")
+      require("nvim-tree").setup(opts)
       vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
     end,
   },
