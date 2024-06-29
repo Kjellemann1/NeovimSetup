@@ -40,3 +40,15 @@ vim.api.nvim_set_keymap('n', '<leader>fw', '<cmd>Telescope live_grep<CR>', { nor
 -- Tabnew
 
 vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true })
+
+-- Jump between tabs
+
+vim.api.nvim_set_keymap('n', '<leader>1', '1gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>2', '2gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>3', '3gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>4', '4gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>5', '5gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>6', '6gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>7', '7gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>8', '8gt', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>9', '9gt', { noremap = true, silent = true })

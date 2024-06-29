@@ -34,3 +34,8 @@ vim.api.nvim_create_autocmd("VimResized", {
   pattern = "*",
   command = "tabdo wincmd =",
 })
+
+-- Reselect after indenting
+
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
