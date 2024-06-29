@@ -23,7 +23,7 @@ plugins = {
     config = function()
       local opts = require("plugins.configs.nvimtree")
       require("nvim-tree").setup(opts)
-      vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
     end,
   },
 
@@ -58,18 +58,18 @@ plugins = {
   },
 
   { -- BufDel
-    'ojroques/nvim-bufdel',
+    "ojroques/nvim-bufdel",
     config = function()
       require("bufdel").setup({
         quit = false,
-        vim.api.nvim_set_keymap('n', '<leader>x', ':BufDel<CR>', { noremap = true, silent = true })
+        vim.api.nvim_set_keymap("n", "<leader>x", ":BufDel<CR>", { noremap = true, silent = true })
       })
     end,
   },
 
   { -- Lualine
-    'nvim-lualine/lualine.nvim',
-    requires = {'nvim-tree/nvim-web-devicons', opt = true},
+    "nvim-lualine/lualine.nvim",
+    requires = {"nvim-tree/nvim-web-devicons", opt = true},
     config = function()
       local opts = require("plugins.configs.lualine")
       require("lualine").setup(opts)
