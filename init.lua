@@ -1,6 +1,6 @@
 
-require(".core.qol")
-require(".core.maps")
+require(".qol")
+require(".maps")
 require(".lazy")
 
 vim.opt.termguicolors = true

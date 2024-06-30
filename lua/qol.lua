@@ -1,10 +1,10 @@
 
--- Linjenummer
+-- Line numbers
 
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Sørg for at kommentar ikke gjentas på ny linje
+-- Comments don't continue on new line
 
 vim.api.nvim_exec([[
   autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -15,6 +15,15 @@ vim.api.nvim_exec([[
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
+    vim.opt_local.expandtab = true
+  end
+})
 
 -- Linewrap
 
@@ -32,10 +41,16 @@ vim.api.nvim_create_autocmd({'BufRead', 'BufNewFile'}, {
 
 vim.api.nvim_create_autocmd("VimResized", {
   pattern = "*",
-  command = "tabdo wincmd =",
+  command = "wincmd =",
 })
+
 
 -- Reselect after indenting
 
 vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
+
+-- Set split window to open below and to the right
+
+vim.o.splitbelow = true
+vim.o.splitright = true

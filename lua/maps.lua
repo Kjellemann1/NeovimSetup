@@ -15,10 +15,6 @@ vim.api.nvim_set_keymap('i', '<A-,>', 'copilot#Accept("<CR>")', { silent = true,
 vim.api.nvim_set_keymap('i', '<M-m>', '<space>%>%<space>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<M-->', '<space><-<space>', { noremap = true, silent = true })
 
--- New Tab
-
-vim.api.nvim_set_keymap('n', '<leader>tn', '<cmd>:tabnew<CR>', { noremap = true, silent = true })
-
 -- Leader key
 
 vim.g.mapleader = " "
@@ -52,3 +48,15 @@ vim.api.nvim_set_keymap('n', '<leader>6', '6gt', { noremap = true, silent = true
 vim.api.nvim_set_keymap('n', '<leader>7', '7gt', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>8', '8gt', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>9', '9gt', { noremap = true, silent = true })
+
+-- Toggle Highlight
+
+vim.api.nvim_set_keymap('n', '<leader>h', ':set hlsearch!<CR>', { noremap = true, silent = true })
+
+-- Also Accept Capital Letters
+
+vim.cmd('command! W w')
+vim.cmd('command! Q q')
+vim.cmd('command! WQ wq')
+vim.cmd('command! Wq wq')
+
