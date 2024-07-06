@@ -47,10 +47,14 @@ vim.api.nvim_create_autocmd("VimResized", {
 
 -- Reselect after indenting
 
-vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
+function OpenTabAtEnd()
+  local current_dir = vim.fn.getcwd()
+  local total_tabpages = vim.fn.tabpagenr('$')
 
--- Set split window to open below and to the right
+  vim.cmd('tabnext ' .. total_tabpages)
+  
+  vim.cmd('tabnew')
+  vim.cmd('cd ' .. current_dir)
+end
 
-vim.o.splitbelow = true
-vim.o.splitright = true
+vim.cmd('command! Tabnew lua OpenTabAtEnd()')

@@ -1,5 +1,5 @@
 
-local options = {
+local config = {
 
   filters = {
     dotfiles = false,
@@ -75,4 +75,4 @@ local options = {
   },
 }
 
-return options
+return config

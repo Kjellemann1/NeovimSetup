@@ -5,6 +5,9 @@ catpuccin = {
   "catppuccin/nvim",
   priority = 1000,
   config = function()
+    require("catppuccin").setup({
+      flavour = "mocha"
+    })
     vim.cmd([[colorscheme catppuccin]])
   end,
 }
@@ -41,11 +44,10 @@ bluloco = {
   end,
 }
 
--- VSCode
+-- VSCodeModern
 
-vscode = {
+vscode_modern = {
   "gmr458/vscode_modern_theme.nvim",
-  lazy = false,
   priority = 1000,
   config = function()
     require("vscode_modern").setup({
@@ -54,6 +56,40 @@ vscode = {
       nvim_tree_darker = true,
     })
     vim.cmd.colorscheme("vscode_modern")
+  end,
+}
+
+-- Tokyonight
+
+tokyonight = {
+  "folke/tokyonight.nvim",
+  priority = 1000,
+  config = function()
+    vim.g.tokyonight_style = "night"
+    vim.cmd[[colorscheme tokyonight]]
+  end,
+}
+
+-- VSCode
+
+vscode = {
+  "Mofiqul/vscode.nvim",
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme("vscode")
+  end,
+}
+
+-- Onedark
+
+onedark = {
+  "navarasu/onedark.nvim",
+  priority = 1000,
+  config = function()
+    require("onedark").setup({
+      style = "darker"
+    })
+    vim.cmd[[colorscheme onedark]]
   end,
 }
 

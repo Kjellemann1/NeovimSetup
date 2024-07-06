@@ -1,6 +1,12 @@
 
 plugins = {
 
+  { -- Luarocks
+    "vhyrro/luarocks.nvim",
+    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+    config = true,
+  },
+
   { -- Copilot
     lazy = false,
     "github/copilot.vim",
@@ -21,8 +27,8 @@ plugins = {
       "nvim-tree/nvim-web-devicons"
     },
     config = function()
-      local opts = require("plugins.configs.nvimtree")
-      require("nvim-tree").setup(opts)
+      local config = require("plugins.configs.nvimtree")
+      require("nvim-tree").setup(config)
       vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
     end,
   },
@@ -46,7 +52,8 @@ plugins = {
     version = "*",
     dependencies = {"nvim-tree/nvim-web-devicons"},
     config = function()
-      require("bufferline").setup({})
+      local config = require("plugins.configs.bufferline")
+      require("bufferline").setup(config)
     end,
   },
 
@@ -71,8 +78,38 @@ plugins = {
     "nvim-lualine/lualine.nvim",
     requires = {"nvim-tree/nvim-web-devicons", opt = true},
     config = function()
-      local opts = require("plugins.configs.lualine")
-      require("lualine").setup(opts)
+      local config = require("plugins.configs.lualine")
+      require("lualine").setup(config)
+    end,
+  },
+
+  { -- LSP
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  },
+
+  { -- Indent Blankline
+    "lukas-reineke/indent-blankline.nvim", 
+    lazy = false,
+    config = function() 
+      local config = require("plugins.configs.indentblankline")
+      require("ibl").setup(config) 
+    end,
+  },
+
+  { -- Treesitter
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { 
+          "python", "rust", "r"
+        },
+        highlight = {
+          enable = true,
+        },
+      })
     end,
   },
 
