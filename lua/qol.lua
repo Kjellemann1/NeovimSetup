@@ -44,6 +44,10 @@ vim.api.nvim_create_autocmd("VimResized", {
   command = "wincmd =",
 })
 
+-- Set split window to open below and to the right
+
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 -- Reselect after indenting
 
@@ -56,5 +60,7 @@ function OpenTabAtEnd()
   vim.cmd('tabnew')
   vim.cmd('cd ' .. current_dir)
 end
+
+-- Open a new tab at the end of the tab list with the same directory as the current tab
 
 vim.cmd('command! Tabnew lua OpenTabAtEnd()')
