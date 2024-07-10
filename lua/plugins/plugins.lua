@@ -7,9 +7,27 @@ plugins = {
     config = true,
   },
 
+  { -- Treesitter
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup({
+        ensure_installed = { 
+          "python", "rust", "r"
+        },
+        highlight = {
+          enable = true,
+        },
+      })
+    end,
+  },
+
   { -- Copilot
     lazy = false,
     "github/copilot.vim",
+    config = function()
+      vim.g.copilot_no_tab_map = true
+    end,
   },
 
   { -- Autopairs
@@ -95,21 +113,6 @@ plugins = {
     config = function() 
       local config = require("plugins.configs.indentblankline")
       require("ibl").setup(config) 
-    end,
-  },
-
-  { -- Treesitter
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { 
-          "python", "rust", "r"
-        },
-        highlight = {
-          enable = true,
-        },
-      })
     end,
   },
 

@@ -35,7 +35,7 @@ vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope live_grep<CR>', { nore
 
 -- Tabnew
 
-vim.api.nvim_set_keymap('n', '<leader>tn', ':Tabnew<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew<CR>', { noremap = true, silent = true })
 
 -- Jump between tabs
 
@@ -59,4 +59,3 @@ vim.cmd('command! W w')
 vim.cmd('command! Q q')
 vim.cmd('command! WQ wq')
 vim.cmd('command! Wq wq')
-

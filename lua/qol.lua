@@ -51,16 +51,23 @@ vim.o.splitright = true
 
 -- Reselect after indenting
 
-function OpenTabAtEnd()
-  local current_dir = vim.fn.getcwd()
-  local total_tabpages = vim.fn.tabpagenr('$')
-
-  vim.cmd('tabnext ' .. total_tabpages)
-  
-  vim.cmd('tabnew')
-  vim.cmd('cd ' .. current_dir)
-end
+vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
 
 -- Open a new tab at the end of the tab list with the same directory as the current tab
 
+-- function OpenTabAtEnd()
+--   local current_dir = vim.fn.getcwd()
+--   local total_tabpages = vim.fn.tabpagenr('$')
+--
+--   vim.cmd('tabnext ' .. total_tabpages)
+--   
+--   vim.cmd('tabnew')
+--   vim.cmd('cd ' .. current_dir)
+-- end
+
 vim.cmd('command! Tabnew lua OpenTabAtEnd()')
+
+-- set cursorline
+
+vim.o.cursorline = true
