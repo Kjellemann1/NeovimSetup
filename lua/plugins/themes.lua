@@ -1,18 +1,14 @@
 
--- Catpuccin
-
 catpuccin = {
   "catppuccin/nvim",
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      flavour = "mocha"
+      -- flavour = "mocha"
     })
     vim.cmd([[colorscheme catppuccin]])
   end,
 }
-
--- Dracula
 
 dracula = {
   "Mofiqul/dracula.nvim",
@@ -21,8 +17,6 @@ dracula = {
     vim.cmd([[colorscheme dracula]])
   end,
 }
-
--- Cobalt2
 
 cobalt2 = {
   "lalitmee/cobalt2.nvim",
@@ -33,8 +27,6 @@ cobalt2 = {
   end,
 }
 
--- Bluloco
-
 bluloco = {
   'uloco/bluloco.nvim',
   priority = 1000,
@@ -43,8 +35,6 @@ bluloco = {
     -- your optional config goes here, see below.
   end,
 }
-
--- VSCodeModern
 
 vscode_modern = {
   "gmr458/vscode_modern_theme.nvim",
@@ -59,18 +49,14 @@ vscode_modern = {
   end,
 }
 
--- Tokyonight
-
 tokyonight = {
   "folke/tokyonight.nvim",
   priority = 1000,
   config = function()
     vim.g.tokyonight_style = "night"
-    vim.cmd[[colorscheme tokyonight]]
+    vim.cmd.colorscheme("tokyonight")
   end,
 }
-
--- VSCode
 
 vscode = {
   "Mofiqul/vscode.nvim",
@@ -80,8 +66,6 @@ vscode = {
   end,
 }
 
--- Onedark
-
 onedark = {
   "navarasu/onedark.nvim",
   priority = 1000,
@@ -89,8 +73,30 @@ onedark = {
     require("onedark").setup({
       style = "darker"
     })
-    vim.cmd[[colorscheme onedark]]
+    vim.cmd.colorscheme("onedark")
   end,
 }
 
-return vscode
+rosepine = {
+  "rose-pine/neovim",
+  priority = 1000,
+  config = function()
+    require("rose-pine").setup({
+      variant = "dawn"
+    })
+    vim.cmd.colorscheme("rose-pine")
+  end,
+}
+
+everforest = {
+  "sainnhe/everforest",
+  priority = 1000,
+  config = function()
+    vim.o.background = "dark"
+    vim.g.everforest_disable_italic_comment = true
+    vim.g.everforest_background = "hard"
+    vim.cmd.colorscheme("everforest")
+  end,
+}
+
+return everforest

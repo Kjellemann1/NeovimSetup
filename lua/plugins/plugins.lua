@@ -11,14 +11,8 @@ plugins = {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = { 
-          "python", "rust", "r"
-        },
-        highlight = {
-          enable = true,
-        },
-      })
+      local config = require("plugins.configs.treesitter")
+      require("nvim-treesitter.configs").setup(config)
     end,
   },
 
@@ -47,7 +41,7 @@ plugins = {
     config = function()
       local config = require("plugins.configs.nvimtree")
       require("nvim-tree").setup(config)
-      vim.api.nvim_set_keymap("n", "<C-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<M-n>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
     end,
   },
 
@@ -55,6 +49,10 @@ plugins = {
     lazy = false,
     "nvim-telescope/telescope.nvim",
     dependencies = {"nvim-lua/plenary.nvim"},
+    config = function()
+      local config = require("plugins.configs.telescope")
+      require("telescope").setup(config)
+    end
   },
 
   { -- Comment
@@ -64,16 +62,16 @@ plugins = {
     config = true
   },
 
-  { -- Bufferline
-    lazy = false,
-    "akinsho/bufferline.nvim",
-    version = "*",
-    dependencies = {"nvim-tree/nvim-web-devicons"},
-    config = function()
-      local config = require("plugins.configs.bufferline")
-      require("bufferline").setup(config)
-    end,
-  },
+  -- { -- Bufferline
+  --   lazy = false,
+  --   "akinsho/bufferline.nvim",
+  --   version = "*",
+  --   dependencies = {"nvim-tree/nvim-web-devicons"},
+  --   config = function()
+  --     local config = require("plugins.configs.bufferline")
+  --     require("bufferline").setup(config)
+  --   end,
+  -- },
 
   { -- Scope
     "tiagovla/scope.nvim",
@@ -113,6 +111,26 @@ plugins = {
     config = function() 
       local config = require("plugins.configs.indentblankline")
       require("ibl").setup(config) 
+    end,
+  },
+
+  { -- Startuptime
+    "dstein64/vim-startuptime",
+  },
+
+  { -- CodeRunner
+    "CRAG666/code_runner.nvim",
+    config = function()
+      local config = require("plugins.configs.coderunner")
+      require("code_runner").setup(config)
+    end,
+  },
+
+  { -- Harpoon
+    "ThePrimeagen/harpoon",
+    config = function()
+      config = require("plugins.configs.harpoon")
+      require("harpoon").setup(config)
     end,
   },
 

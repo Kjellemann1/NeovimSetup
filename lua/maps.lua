@@ -1,10 +1,10 @@
 
 -- Move betweeen splits with Ctrl+h/j/k/l
 
-vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-h>', '<C-w>h', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-j>', '<C-w>j', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-k>', '<C-w>k', { noremap = true, silent = true })
+vim.keymap.set('n', '<M-l>', '<C-w>l', { noremap = true, silent = true })
 
 -- Copilot
 
@@ -21,8 +21,14 @@ vim.g.mapleader = " "
 
 -- Move between buffers
 
-vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true })
+  -- With bufferline
+-- vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', {noremap = true, silent = true })
+
+  -- With no bufferline
+vim.api.nvim_set_keymap('n', '<Tab>', ':bnext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-Tab>', ':bprevious<CR>', { noremap = true, silent = true })
+
 
 -- Escape from terminal mode
 
@@ -32,6 +38,7 @@ vim.api.nvim_set_keymap('t', '<S-Tab>', '<C-\\><C-n>', { noremap = true, silent 
 
 vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>Telescope live_grep<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>b', '<cmd>Telescope buffers<CR>', { noremap = true, silent = true })
 
 -- Tabnew
 
@@ -59,3 +66,15 @@ vim.cmd('command! W w')
 vim.cmd('command! Q q')
 vim.cmd('command! WQ wq')
 vim.cmd('command! Wq wq')
+
+-- Code Runner
+
+vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = false })
+
+-- Harpoon
+
+vim.api.nvim_set_keymap('n', '<leader>ma', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>mr', ':lua require("harpoon.mark").rm_file()<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<leader>j', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>j', ':Telescope harpoon marks theme=cursor<CR>', { noremap = true, silent = true }) -- To use Telescope instead of the quick menu
