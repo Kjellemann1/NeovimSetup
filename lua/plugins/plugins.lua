@@ -62,17 +62,6 @@ plugins = {
     config = true
   },
 
-  -- { -- Bufferline
-  --   lazy = false,
-  --   "akinsho/bufferline.nvim",
-  --   version = "*",
-  --   dependencies = {"nvim-tree/nvim-web-devicons"},
-  --   config = function()
-  --     local config = require("plugins.configs.bufferline")
-  --     require("bufferline").setup(config)
-  --   end,
-  -- },
-
   { -- Scope
     "tiagovla/scope.nvim",
     config = function()
@@ -99,12 +88,6 @@ plugins = {
     end,
   },
 
-  { -- LSP
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
-  },
-
   { -- Indent Blankline
     "lukas-reineke/indent-blankline.nvim", 
     lazy = false,
@@ -118,14 +101,6 @@ plugins = {
     "dstein64/vim-startuptime",
   },
 
-  { -- CodeRunner
-    "CRAG666/code_runner.nvim",
-    config = function()
-      local config = require("plugins.configs.coderunner")
-      require("code_runner").setup(config)
-    end,
-  },
-
   { -- Harpoon
     "ThePrimeagen/harpoon",
     config = function()
@@ -133,6 +108,10 @@ plugins = {
       require("harpoon").setup(config)
     end,
   },
+
+  { -- Cellular-automaton
+    "eandrju/cellular-automaton.nvim",
+  }
 
 }
 
