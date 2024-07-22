@@ -1,5 +1,5 @@
 
-local config = {
+return {
 
   options = {
     diagnostics = "nvim_lsp",
@@ -21,5 +21,3 @@ local config = {
   }
 
 }
-
-return config

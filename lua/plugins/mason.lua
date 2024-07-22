@@ -10,7 +10,6 @@ return {
     mason.setup({})
     mason_lspconfig.setup({
       ensure_installed = {
-        "pyright",
       },
       automatic_installation = true,
     })

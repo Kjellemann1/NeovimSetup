@@ -77,4 +77,4 @@ vim.keymap.set('n', '<leader>rp', ':RunProject<CR>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<leader>ma', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>mr', ':lua require("harpoon.mark").rm_file()<CR>', { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap('n', '<leader>j', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>j', ':Telescope harpoon marks theme=ivy<CR>', { noremap = true, silent = true }) -- To use Telescope instead of the quick menu
+vim.api.nvim_set_keymap('n', '<leader>j', ':Telescope harpoon marks theme=dropdown<CR>', { noremap = true, silent = true }) -- To use Telescope instead of the quick menu

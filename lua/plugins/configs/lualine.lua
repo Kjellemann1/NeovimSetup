@@ -1,5 +1,5 @@
 
-local config = {
+return {
 
   options = {
     icons_enabled = true,
@@ -23,5 +23,3 @@ local config = {
   extensions = {}
 
 }
-
-return config

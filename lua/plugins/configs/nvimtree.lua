@@ -1,5 +1,5 @@
 
-local config = {
+return {
 
   filters = {
     dotfiles = false,
@@ -74,5 +74,3 @@ local config = {
     },
   },
 }
-
-return config

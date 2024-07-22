@@ -1,8 +1,7 @@
 
-local config = {
+return {
   defaults = {
     layout_config = {
-      preview_width = 0.6,
       width = 0.6,
       height = 0.6,
       prompt_position = "top",
@@ -24,5 +23,3 @@ local config = {
     },
   },
 }
-
-return config

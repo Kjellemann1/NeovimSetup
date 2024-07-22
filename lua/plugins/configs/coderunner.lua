@@ -1,5 +1,5 @@
 
-local config = {
+return = {
   filetype = {
     python = "python3 -u"
   },
@@ -8,5 +8,3 @@ local config = {
     size = 100
   },
 }
-
-return config

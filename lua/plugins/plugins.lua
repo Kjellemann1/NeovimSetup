@@ -1,11 +1,5 @@
 
-plugins = {
-
-  { -- Luarocks
-    "vhyrro/luarocks.nvim",
-    priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
-    config = true,
-  },
+return {
 
   { -- Treesitter
     "nvim-treesitter/nvim-treesitter",
@@ -27,7 +21,7 @@ plugins = {
   { -- Autopairs
     lazy = false,
     "windwp/nvim-autopairs",
-    config = function() 
+    config = function()
       require("nvim-autopairs").setup({})
     end,
   },
@@ -89,11 +83,11 @@ plugins = {
   },
 
   { -- Indent Blankline
-    "lukas-reineke/indent-blankline.nvim", 
+    "lukas-reineke/indent-blankline.nvim",
     lazy = false,
-    config = function() 
+    config = function()
       local config = require("plugins.configs.indentblankline")
-      require("ibl").setup(config) 
+      require("ibl").setup(config)
     end,
   },
 
@@ -104,7 +98,7 @@ plugins = {
   { -- Harpoon
     "ThePrimeagen/harpoon",
     config = function()
-      config = require("plugins.configs.harpoon")
+      local config = require("plugins.configs.harpoon")
       require("harpoon").setup(config)
     end,
   },
@@ -115,4 +109,3 @@ plugins = {
 
 }
 
-return plugins

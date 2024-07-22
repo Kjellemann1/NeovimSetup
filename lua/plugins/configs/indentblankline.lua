@@ -1,7 +1,5 @@
 
-local config = {
+return{
   enabled = true,
   scope = { enabled = false }
 }
-
-return config
